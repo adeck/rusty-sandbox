@@ -11,21 +11,22 @@
 
 // ---- token classes ----
 
-type IntType = i64;
+pub type IntType = i64;
 
-enum Token {
+pub enum Token {
   LITERAL(Literal),
   OP(Operator),
   LPAR,
   RPAR,
+  WS(char),
   EOF,
 }
 
-enum Literal {
+pub enum Literal {
   INT(IntType),
 }
 
-enum Operator {
+pub enum Operator {
   Pow,
   Mult,
   Div,
