@@ -1,6 +1,6 @@
 
 Implements a dead simple guessing game as described [here][chapter 2].
-The computer generates a number randomly in the range [0, 100], and you guess what that number is.
+The computer generates a number randomly in the range [1, 100], and you guess what that number is.
 You get infinite guesses, it tells you whether the number you're guessing is too high or too low.
 And when you guess the correct number, you win!
 
