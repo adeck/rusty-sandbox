@@ -4,15 +4,15 @@ use std::io;
 mod company;
 use company::Company;
 
+mod command;
+
 fn main() {
     let mut us = Company::new();
     'repl: loop {
         let line = read_line();
-        let parts: Vec<&str> = line.split(' ').collect();
-        if parts == vec![""] {
-            println!("An empty line? Weak sauce.");
-        }
+        let parts: Vec<&str> = line.split(' ').filter(|s| !s.is_empty()).collect();
         println!("The parts were: {:?}", parts);
+        command::Command::parse(parts);
         // TODO -- read user input
         // TODO -- attempt to parse user input
         // TODO -- act on relevant command
